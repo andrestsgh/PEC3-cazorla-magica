@@ -1,0 +1,6 @@
+@mixin frame($height, $width, $margin, $border) {
+    height: $height;
+    width: $width;
+    margin: $margin;
+    border: $border;
+}

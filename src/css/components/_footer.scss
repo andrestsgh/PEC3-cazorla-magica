@@ -1,0 +1,103 @@
+.footer {
+  background-color: $color-primary-green;
+  color: $color-light;
+  padding-left: $padding_sm;
+  padding-right: $padding_sm;
+  padding-top: $big-px;
+  padding-bottom: $big-px;
+  text-align: center;
+  
+  @media (min-width: $tablet) {
+    display: block;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+  }
+  
+  &__contact {
+    margin-bottom: $medium-px;
+    margin-right: $medium-px;
+    display: none; // Don't show contact section in mobile devices
+
+    @media (min-width: $desktop) {
+      display: block; // Showing contact in tablet and desktop devices
+      padding-left: $padding_md;
+    }
+
+    &-link {
+      color: $color-light;
+      text-decoration: none;
+      transition: color 1s ease;
+
+      &:hover {
+        color: $color-dark;
+        text-decoration: underline;
+      }
+      
+      &--contrast {
+        color: $color-primary-green;
+      }
+    }
+  }
+  
+  &__title {
+    font-size: 1.2rem;
+    padding-top: $small-px;
+    padding-bottom: $small-px;
+    color: $color-light;
+    @media (min-width: $desktop) {
+      display: none;
+    }
+  }
+  
+  &__ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: $padding_sm;
+
+    @media (min-width: $desktop) {
+      padding-right: $padding_md;
+    }
+    &:hover &-logo {
+      clip-path: circle(100%);
+      opacity: 0.9;
+    }
+    &-logo {
+      position: absolute;
+      z-index: 0;
+      height: 200%;
+      width: auto;
+      opacity: 0.5;
+      transition: clip-path 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      clip-path: circle(25%);
+      
+      @media (min-width: $desktop) {
+        height: 300%;
+      }
+    }
+    &-list {
+      position: relative;
+      font-size: 1.5rem;
+      display: flex;
+      gap: 10px;
+      z-index: 1;
+    }
+  
+    &-link {
+      color: $color-light;
+      transition: color 1s ease;
+
+      &:hover {
+        color: $color-dark;
+        clip-path: circle(50%);
+      }
+    }
+  }
+}
+  

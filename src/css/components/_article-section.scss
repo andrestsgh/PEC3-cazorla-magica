@@ -1,0 +1,209 @@
+.article-section {
+  padding-top: $padding_sm;
+  padding-bottom: $padding_sm;
+  padding-left: $padding_sm;
+  padding-right: $padding_sm;
+
+  @media (min-width: $tablet) {
+    padding-top: $padding_md;
+    padding-left: $padding_bg;
+    padding-right: $padding_bg;
+  }
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: $padding_md;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    .article-section__animation {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .line-vertical {
+      stroke: $color-primary-green;
+      stroke-width: 4;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: line-vertical-move 1.5s ease-in forwards;
+    }
+
+    .line-horizontal {
+      stroke: $color-primary-green;
+      stroke-width: 15;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: line-horizontal-move 1.5s ease-in forwards;
+      animation-delay: 1.5s;
+    }
+
+    &-title {
+      opacity: 0;
+      position: relative;
+      animation: fade-in 1s ease-in forwards;
+      animation-delay: 3s;
+      padding-top: $small-px;
+      padding-bottom: $small-px;
+      font-family: $font-secondary;
+      font-size: 24px;
+      color: $color-primary-green;
+      font-weight: 500;
+      text-transform: uppercase;
+  
+      &--color_light {
+        color: $color-light;
+      }
+    }
+  }
+
+  @keyframes line-vertical-move {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes line-horizontal-move {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__front-page-image {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 10px;
+    @media (min-width: $desktop) {
+      height: 50vh;
+      object-fit: cover;
+      clip-path: inset(10% 0 10% 0);
+    }
+  }
+  &__container{
+    padding-top: $small-px;
+    padding-bottom: $medium-px;
+    text-align: center;
+    padding: $padding_sm;
+    margin-bottom: $padding_sm;
+  
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      text-align: justify;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-left: $padding_sm;
+      margin-right: $padding_sm;
+      margin-top: $padding_sm;
+      gap: $padding_sm;
+    }
+    
+    @media (min-width: $desktop) {
+      gap: $padding_md;
+    }
+
+    &-frame {
+      background-color: rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: auto;
+      width: 100%;
+      margin: auto;
+      border-radius: 4px;
+      padding: $padding_sm;
+      @media (min-width: $tablet) {
+        @include frame(215px, 215px, auto, 10px);
+      }
+  
+      @media (min-width: $desktop) {
+        @include frame(288px, 288px, auto, 20px);
+        clip-path: circle(50%);
+      }
+      &:hover &-photo {
+        @media (min-width: $desktop) {
+          transform: scale(1.3);
+        }
+      }
+      &-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+
+        @media (min-width: $tablet) {
+          margin: 5px;
+          width: 207px;
+        }
+  
+        @media (min-width: $desktop) {
+          width: 278px;
+          transition: transform 0.3s ease-in-out;
+          clip-path: inherit;
+        }
+      }
+
+      &-video {
+        width: 100%;
+        height: auto;
+        @media (min-width: $tablet) {
+          margin: 5px;
+          width: 100%;
+          height: 500px;
+        }
+      }
+    }
+
+    &-info {
+      padding-bottom: $padding_md;
+    }
+
+    &-description{
+      font-family: $font-primary;
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: $color-dark;
+      margin-bottom: 15px;
+    }
+
+    &--ul{
+      list-style: circle;
+      padding-right: $padding_sm;
+    }    
+    
+    &--flex-column{
+      @media (min-width: $tablet) {
+        flex-direction: column;
+      }
+    }
+  }
+  &--bg-color-primary {
+    background-color: rgba($color: $color-primary-green, $alpha: 0.7);
+  }
+
+  &--bg-color-secondary {
+    background-color: rgba($color: $color-secondary-sepia, $alpha: 0.7);
+  }
+
+  &--border {
+    border-radius: 25px;
+  }
+}

@@ -1,0 +1,115 @@
+.header {
+  background-color: $color-primary-green;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding-right: $padding_sm;
+  padding-left: $padding_sm;
+
+  @media (min-width: $tablet) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-right: $padding_md;
+    padding-left: $padding_md;
+  }
+  &__title {
+    text-align: center;
+    color: $color-light;
+    font-size: 25px;
+    width: 100%;
+    padding-bottom: $padding_sm;
+
+    @media (min-width: $tablet) {
+      font-size: 50px;
+      padding-bottom: 0;
+    }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    width: auto;
+    height: 100%;
+    
+    &-image {
+      height: 100px;
+      width: auto;
+      @media (min-width: $tablet) {
+        height: 150px;
+      }
+    }
+    @media (min-width: $tablet) {
+      display: inline-block;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    @media (min-width: $tablet) {
+      padding-left: $padding_sm;
+    }
+  }
+}
+
+.nav-container {
+  font-family: $font-secondary;
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: $padding_sm;
+  padding-bottom: $padding_sm;
+
+  @media (min-width: $tablet) {
+    justify-content: flex-end;
+  }
+
+  &__item {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &__link {
+    color: $color-light;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: color 1s ease-out;
+    line-height: 2rem;
+    
+    &:hover {
+      color: $color-dark;
+    }
+
+    &--active {
+      font-weight: bold;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-color: $color-light;
+    }
+  }
+}
+
+.background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

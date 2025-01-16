@@ -1,0 +1,18 @@
+/**
+ * Import npm dependencies
+ * see: https://v2.parceljs.org/features/module-resolution/
+ * see commented examples below
+ */
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+@import "settings/variables";
+@import "tools/mixins";
+@import "generic/reset";
+@import "elements/typography";
+@import "objects/button";
+@import "components/header";
+@import "components/footer";
+@import "components/card-info";
+@import "components/main-content";
+@import "components/article-section";
+@import "utilities/modifiers";

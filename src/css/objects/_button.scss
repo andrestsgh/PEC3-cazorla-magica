@@ -1,0 +1,71 @@
+.button {
+  display: inline-block;
+  padding: $small-px $medium-px;
+  background-color: $color-primary-green;
+  color: $color-light;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in;
+
+  @media (min-width: $tablet) {
+    max-width: 200px;
+  }
+  
+  @media (min-width: $desktop) {
+    max-width: 300px;
+  }
+  
+  &:hover{
+    background-color: $color-dark;
+  }
+  &--center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--contrast {
+    background-color: $color-dark;
+    
+    &:hover {
+      background-color: $color-primary-green;
+    }
+  }
+
+  &--soft {
+    background-color: $color-secondary-sepia;
+  }
+  
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid;
+    color: $color-primary-green;
+
+    &:hover {
+      background-color: transparent;
+      color: $color-dark;
+    }
+
+    &-light {
+      color: $color-light;
+      
+      &:hover {
+        color: $color-dark;
+      }
+    }
+
+    &-dark {
+      color: $color-dark;
+      
+      &:hover {
+        color: $color-light;
+      }
+    }
+  }
+}
