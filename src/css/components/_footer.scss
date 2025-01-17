@@ -90,12 +90,12 @@
     }
   
     &-link {
-      color: $color-light;
-      transition: color 1s ease;
-
+      fill: $color-light;
+      transition: fill 1s ease;
+      margin: 0 10px;
+      
       &:hover {
-        color: $color-dark;
-        clip-path: circle(50%);
+        fill: $color-dark;
       }
     }
   }

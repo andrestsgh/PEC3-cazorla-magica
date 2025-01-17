@@ -25,3 +25,15 @@
 .text-center {
   text-align: center;
 }
+.icon {
+  width: 1em;
+  height: 1em;
+  
+  &--color-ligth {
+    fill: $color-light;
+  }
+
+  &--margin {
+    margin: 0 15px;
+  }
+}
