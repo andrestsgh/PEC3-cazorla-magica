@@ -37,3 +37,14 @@
     margin: 0 15px;
   }
 }
+
+.video-placeholder {
+  width: 100%;
+  background: #000;
+}
+
+.video-facade {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
